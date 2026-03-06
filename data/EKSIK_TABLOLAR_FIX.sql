@@ -147,6 +147,20 @@ CREATE TABLE IF NOT EXISTS `m_hud_playlists` (
   KEY `citizenid` (`citizenid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+-- 10b. m_hud_playlist_songs tablosu
+CREATE TABLE IF NOT EXISTS `m_hud_playlist_songs` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `playlist_id` int(11) DEFAULT NULL,
+  `citizenid` varchar(50) DEFAULT NULL,
+  `title` varchar(255) DEFAULT NULL,
+  `artist` varchar(255) DEFAULT NULL,
+  `url` varchar(500) DEFAULT NULL,
+  `duration` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `playlist_id` (`playlist_id`),
+  KEY `citizenid` (`citizenid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
 -- 11. licenses tablosu
 CREATE TABLE IF NOT EXISTS `licenses` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
