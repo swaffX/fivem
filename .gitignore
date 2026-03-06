@@ -1,0 +1,93 @@
+# FiveM Server - Git Ignore
+
+# Cache dosyaları
+data/cache/
+**/cache/
+**/.replxx_history
+
+# Log dosyaları
+*.log
+logs/
+
+# Veritabanı yedekleri
+*.sql.bak
+*.db.bak
+
+# Geçici dosyaları
+*.tmp
+*.temp
+*~
+
+# Windows dosyaları
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# macOS dosyaları
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# IDE dosyaları
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Node modules (eğer varsa)
+node_modules/
+package-lock.json
+
+# Artifacts (FiveM binary dosyaları - VPS'de indirilecek)
+artifacts/*.exe
+artifacts/*.dll
+artifacts/*.so
+artifacts/*.dylib
+
+# Sertifika ve key dosyaları (güvenlik)
+*.key
+*.crt
+*.pem
+*.p12
+
+# Oyuncu verileri (VPS'de oluşturulacak)
+data/resources/[qb]/qb-core/server/player.lua.bak
+
+# Stream cache dosyaları
+**/stream_cache/
+
+# Büyük dosyalar
+*.zip
+*.rar
+*.7z
+*.tar.gz
+
+# Backup dosyaları
+*.bak
+*.backup
+*.old
+
+# Lua compiled dosyaları
+*.luac
+
+# FiveM server cache
+citizen/
+
+# Private config dosyaları (VPS'de düzenlenecek)
+# server.cfg - Bu dosyayı push edeceğiz ama VPS'de düzenleyeceğiz
+
+# Gereksiz dokümantasyon (sadece önemli olanları tuttuk)
+# data/*.md dosyaları zaten temizlendi
+
+# Test dosyaları
+test/
+tests/
+*.test.lua
+
+# Geliştirme dosyaları
+dev/
+development/
+
+# Yedek SQL dosyaları (sadece gerekli olanları tuttuk)
+# data/*.sql dosyaları zaten temizlendi

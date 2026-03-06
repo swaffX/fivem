@@ -1,0 +1,9 @@
+{
+  "version": 2,
+  "general": {
+    "serverName": "nexora-rp"
+  },
+  "server": {
+    "dataPath": "C:/nexorarp/temelPaket/data/"
+  }
+}
