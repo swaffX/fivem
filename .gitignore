@@ -77,16 +77,17 @@ txAdmin/
 citizen/
 
 # Private config dosyaları (VPS'de düzenlenecek)
-# server.cfg - Bu dosyayı push edeceğiz ama VPS'de düzenleyeceğiz
+# server.cfg dosyası GitHub'da var, VPS'de düzenlenecek
+# server.cfg.bkp ve diğer yedekler ignore edilecek
+data/server.cfg.bkp
+data/*.bkp
 
 # Hassas bilgiler içeren dosyalar
 **/admins.json
 **/playersDB.json
-**/config.json
-data/server.cfg
 
-# Gereksiz dokümantasyon (sadece önemli olanları tuttuk)
-# data/*.md dosyaları zaten temizlendi
+# Büyük veritabanı dosyası (VPS'e ayrıca yüklenecek)
+temelpaket.sql
 
 # Test dosyaları
 test/

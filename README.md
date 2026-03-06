@@ -51,6 +51,9 @@ cd fivem
 ```
 
 ### 3. Veritabanı Kurulumu
+
+⚠️ **ÖNEMLİ:** `temelpaket.sql` dosyası GitHub'da YOK (çok büyük). Bu dosyayı ayrıca yüklemeniz gerekiyor.
+
 ```bash
 # MySQL'e bağlan
 mysql -u root -p
@@ -58,20 +61,29 @@ mysql -u root -p
 # Veritabanı oluştur
 CREATE DATABASE temelPaket CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
-# SQL dosyalarını çalıştır
+# Ana SQL dosyasını çalıştır (önce yüklemeniz gerekiyor)
+mysql -u root -p temelPaket < temelpaket.sql
+
+# Düzeltme SQL dosyalarını çalıştır (GitHub'dan geliyor)
 mysql -u root -p temelPaket < data/EKSIK_TABLOLAR_FIX.sql
 mysql -u root -p temelPaket < data/PHONE_INVOICES_SAFE_FIX.sql
 ```
 
 ### 4. FXServer Artifacts İndirme
+
+⚠️ **ÖNEMLİ:** Artifacts klasörü boş (gitignore'da). FXServer'ı manuel indirmeniz gerekiyor.
+
 ```bash
 # Linux için
 cd artifacts
-wget https://runtime.fivem.net/artifacts/fivem/build_proot_linux/master/[BUILD_NUMBER]/fx.tar.xz
+wget https://runtime.fivem.net/artifacts/fivem/build_proot_linux/master/latest/fx.tar.xz
 tar -xf fx.tar.xz
 rm fx.tar.xz
+chmod +x run.sh
 
-# Windows için artifacts klasörüne FXServer.exe kopyalayın
+# Windows için
+# https://runtime.fivem.net/artifacts/fivem/build_server_windows/master/
+# adresinden en son sürümü indirin ve artifacts klasörüne çıkartın
 ```
 
 ### 5. Server.cfg Düzenleme
@@ -173,12 +185,8 @@ sv_licenseKey "YOUR_LICENSE_KEY"
 
 ## 📚 Dokümantasyon
 
-Detaylı dokümantasyon için:
-- `data/VPS_YUKLEME_ONCESI_FINAL_KONTROL.md` - Tam kontrol listesi
-- `data/HIZLI_OZET.md` - Hızlı başlangıç
-- `data/MESLEK_KONTROL_RAPORU.md` - Meslek sistemleri
-- `data/MAAS_DENGELEME_TAMAMLANDI.md` - Maaş sistemi
-- `data/FPS_VE_TEMIZLIK_TAMAMLANDI.md` - FPS optimizasyonları
+Detaylı kurulum rehberi:
+- `UBUNTU_VPS_KURULUM_REHBERI.md` - Ubuntu VPS kurulum rehberi (GitHub clone ile)
 
 ## 🤝 Katkıda Bulunma
 
