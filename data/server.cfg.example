@@ -1,0 +1,137 @@
+# FiveM Server Configuration - Example
+# VPS'de bu dosyayı server.cfg olarak kopyalayıp düzenleyin
+
+## Server Endpoints
+endpoint_add_tcp "0.0.0.0:30120"
+endpoint_add_udp "0.0.0.0:30120"
+sv_maxclients 32
+
+## Steam Web API Key (opsiyonel)
+set steam_webApiKey "none"
+
+## Server Tags
+sets tags "qbcore, roleplay, turkish"
+
+## License Key - BURAYA KENDİ LICENSE KEY'İNİZİ YAZIN
+## https://keymaster.fivem.net adresinden alabilirsiniz
+sv_licenseKey "BURAYA_LICENSE_KEY_YAZIN"
+
+## Server Name
+sv_hostname "Nexora Roleplay"
+sets sv_projectName "Nexora Roleplay"
+sets sv_projectDesc "Türkçe Roleplay Sunucusu"
+
+## Server Icon (URL)
+sets sv_iconUrl "https://example.com/icon.png"
+
+## Loading Screen
+load_server_icon myLogo.png
+sets banner_detail "https://example.com/banner.png"
+sets banner_connecting "https://example.com/banner.png"
+
+## OneSync
+onesync on
+
+## Server Locale
+sets locale "tr-TR"
+sets locales "tr-TR"
+
+## Game Type
+sv_enforceGameBuild 2802
+
+## Discord
+sets Discord "https://discord.gg/yourserver"
+
+## MySQL Connection String
+## BURAYA KENDİ VERİTABANI BİLGİLERİNİZİ YAZIN
+set mysql_connection_string "mysql://kullanici:sifre@localhost/veritabani?charset=utf8mb4"
+
+## Server Commands
+add_ace group.admin command allow
+add_ace group.admin command.quit deny
+add_principal identifier.fivem:1 group.admin
+
+## Resources
+ensure mapmanager
+ensure chat
+ensure spawnmanager
+ensure sessionmanager
+ensure basic-gamemode
+ensure hardcap
+ensure baseevents
+
+## QBCore
+ensure qb-core
+ensure qb-multicharacter
+ensure qb-spawn
+ensure qb-apartments
+ensure qb-garages
+ensure qb-vehicleshop
+ensure qb-houses
+ensure qb-phone
+ensure qb-banking
+ensure qb-ambulancejob
+ensure qb-policejob
+ensure qb-mechanic
+ensure qb-weapons
+ensure qb-lapraces
+ensure qb-racing
+ensure qb-crypto
+ensure qb-diving
+ensure qb-jewelery
+ensure qb-laundromat
+ensure qb-methlab
+ensure qb-weed
+ensure qb-houserobbery
+ensure qb-storerobbery
+ensure qb-bankrobbery
+ensure qb-prison
+ensure qb-vehiclekeys
+ensure qb-drugs
+ensure qb-smallresources
+ensure qb-inventory
+ensure qb-crafting
+ensure qb-vehiclefailure
+ensure qb-radialmenu
+ensure qb-fitbit
+ensure qb-weathersync
+ensure qb-doorlock
+ensure qb-interior
+ensure qb-menu
+ensure qb-input
+ensure qb-management
+ensure qb-weed
+ensure qb-lapraces
+ensure qb-streetraces
+ensure qb-bossmenu
+ensure qb-towjob
+ensure qb-taxi
+ensure qb-truckerjob
+ensure qb-busjob
+ensure qb-vineyard
+ensure qb-hunting
+ensure qb-fishing
+ensure qb-scrapyard
+
+## Standalone Resources
+ensure ox_lib
+ensure progressbar
+ensure screenshot-basic
+
+## Custom Resources
+ensure [alan]
+ensure [meslek]
+ensure [standalone]
+
+## Server Convars
+sv_scriptHookAllowed 0
+sv_endpointprivacy true
+sv_enableNetworkedPhoneExplosions false
+sv_enableNetworkedSounds false
+
+## Rcon Password (güvenli bir şifre belirleyin)
+rcon_password "BURAYA_GUCLU_SIFRE"
+
+## Server Info
+sv_master1 ""
+sv_lan false

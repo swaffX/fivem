@@ -53,6 +53,8 @@ artifacts/*.dylib
 
 # Oyuncu verileri (VPS'de oluşturulacak)
 data/resources/[qb]/qb-core/server/player.lua.bak
+txData/
+txAdmin/
 
 # Stream cache dosyaları
 **/stream_cache/
@@ -76,6 +78,12 @@ citizen/
 
 # Private config dosyaları (VPS'de düzenlenecek)
 # server.cfg - Bu dosyayı push edeceğiz ama VPS'de düzenleyeceğiz
+
+# Hassas bilgiler içeren dosyalar
+**/admins.json
+**/playersDB.json
+**/config.json
+data/server.cfg
 
 # Gereksiz dokümantasyon (sadece önemli olanları tuttuk)
 # data/*.md dosyaları zaten temizlendi
