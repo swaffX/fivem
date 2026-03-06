@@ -238,7 +238,7 @@ RegisterNUICallback('createNewCharacter', function(data, cb)
     local year = tonumber(cData.birthdate:sub(1, 4))
     
     local isValidDate = true
-    local currentYear = tonumber(os.date("%Y"))
+    local currentYear = 2026 -- Sabit yıl (client-side os.date çalışmıyor)
     
     -- Yıl kontrolü (18-100 yaş arası)
     if year < (currentYear - 100) or year > (currentYear - 18) then
