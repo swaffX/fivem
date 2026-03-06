@@ -90,7 +90,23 @@ RegisterNetEvent('hb_multicharacter:client:closeNUIdefault', function() -- This 
     Wait(500)
     DoScreenFadeIn(250)
     TriggerEvent('qb-weathersync:client:EnableSync')
-    TriggerEvent('qb-clothes:client:CreateFirstCharacter')
+    
+    -- Appearance sistemi açılıyor
+    if Config.UseAppearance == "illenium-appearance" then
+        exports['illenium-appearance']:startPlayerCustomization(function(appearance)
+            if appearance then
+                TriggerServerEvent('illenium-appearance:server:saveAppearance', appearance)
+            end
+        end)
+    elseif Config.UseAppearance == "fivem-appearance" then
+        exports['fivem-appearance']:startPlayerCustomization(function(appearance)
+            if appearance then
+                TriggerServerEvent('fivem-appearance:save', appearance)
+            end
+        end)
+    else
+        TriggerEvent('qb-clothes:client:CreateFirstCharacter')
+    end
 end)
 
 RegisterNetEvent('hb_multicharacter:client:closeNUI', function()
