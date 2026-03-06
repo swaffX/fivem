@@ -1,0 +1,32 @@
+name: Create a Release
+on:
+  push:
+    tags:
+    - 'v*'
+jobs:
+  release:
+    name: Create a new Release
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        fetch-depth: 0
+    - name: Copy files
+      run: |
+        mkdir -p ${{ github.event.repository.name }}
+        shopt -s extglob
+        rm -rf .git* docs LICENSE README.md
+        mv !(${{ github.event.repository.name }}) ${{ github.event.repository.name }}/
+    - uses: thedoctor0/zip-release@master
+      with:
+        type: 'zip'
+        filename: '${{ github.event.repository.name }}.zip'
+    - name: Set output
+      id: vars
+      run: echo ::set-output name=tag::${GITHUB_REF#refs/*/}
+    - uses: marvinpinto/action-automatic-releases@v1.2.1
+      with:
+        repo_token: ${{ secrets.GITHUB_TOKEN }}
+        files: ${{ github.event.repository.name }}.zip
+        title: ${{ steps.vars.outputs.tag }}
+        prerelease: false
